@@ -23,7 +23,7 @@ public class AnimalTests
     void testTigerLocation()
     {
         var tiger=new Tiger();
-        var expected=true;
+        var expected = true;
         var actual=tiger.checklocation();
         Assertions.assertEquals(expected,actual);
 
