@@ -4,9 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>com.shakthi</groupId>
     <artifactId>dayy-2</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>11.0.6+8-b520.43 amd 64</maven.compiler.source>
+        <maven.compiler.target>11.0.6+8-b520.43 amd 64</maven.compiler.target>
+    </properties>
+
+
 
 
 </project>
