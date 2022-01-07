@@ -1,6 +1,6 @@
 package factory;
 
-public class CardFactory {
+public abstract class CardFactory {
     public static CardProvider getCard(String bank)
     {
         if (bank.equals("pqr")) return new PqrCard();
