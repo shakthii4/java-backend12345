@@ -12,11 +12,13 @@ public class Main
         try {
             Connectivity connectivity = new Connectivity();
             DbService service=new DbService(connectivity.getConnection());
-            int cnt = service.create(2, "Shakthi", Date.valueOf(LocalDate.now()), true);
+           /* int cnt = service.create(2, "Shakthi", Date.valueOf(LocalDate.now()), true);
             if (cnt>0)
             {
                 System.out.println("Employee Created Successfully");
-            }
+            }*/
+           service.find();
+
 
         }
         catch (ClassNotFoundException e)
