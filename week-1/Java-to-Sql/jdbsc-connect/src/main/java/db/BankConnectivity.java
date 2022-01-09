@@ -4,29 +4,21 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Connectivity
+public class BankConnectivity
 {
     private final Connection connection;
 
-    public Connectivity() throws ClassNotFoundException,SQLException {
+    public BankConnectivity() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-
         connection= DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/java_backend_training_db",
-            "root",
-            "password");
+                "jdbc:mysql://localhost:3306/Bank_Account",
+                "root",
+                "password");
         connection.setAutoCommit(false);
-        System.out.println("Connected to MySql Successfully");
-
     }
 
     public Connection getConnection()
     {
         return connection;
-
     }
-
-
-
-
 }
