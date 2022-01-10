@@ -1,3 +1,4 @@
+import com.ani.car.Bmw;
 import com.ani.car.Car;
 import com.ani.config.AppConfig;
 
@@ -14,6 +15,9 @@ public class Main
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
         Car car1 = (Car) context.getBean("car");
+        car1.speedUp();
+        Bmw bmw = context.getBean(Bmw.class);
+        bmw.openWindow();
 
         Driver driver1 = (Driver) context.getBean("driver");
 

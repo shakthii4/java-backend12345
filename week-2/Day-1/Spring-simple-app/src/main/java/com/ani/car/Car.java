@@ -7,4 +7,9 @@ public class Car
 {
     @Autowired
     private Tempo tempo;
+
+    public void speedUp()
+    {
+        System.out.println("Speeding Up the Car");
+    }
 }
