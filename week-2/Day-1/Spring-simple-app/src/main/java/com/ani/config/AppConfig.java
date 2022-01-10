@@ -5,8 +5,10 @@ import com.ani.driver.Driver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
-@ComponentScan("com.ani") // hey spring you will find all beans in side given paackage
+@EnableAspectJAutoProxy
+@ComponentScan("com.ani") // hey spring you will find all beans in side given package
 @Configuration
 public class AppConfig
 {
