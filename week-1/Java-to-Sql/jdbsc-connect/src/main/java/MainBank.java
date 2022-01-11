@@ -20,7 +20,9 @@ public class MainBank
            // {
            //     System.out.println("Account Created Successfully");
           //  }
-            service.showAllAccount();
+          //  service.showAllAccount();
+          //  service.displayBalance("Kubi");
+            service.moneyTransfer(12345);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {

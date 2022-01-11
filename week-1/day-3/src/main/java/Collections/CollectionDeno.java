@@ -14,6 +14,11 @@ public class CollectionDeno
         names.add(null);
         names.add("lmn");
         names.add("xyz");
+        names.add(4,"hij");
+        names.contains("abc");
+        names.remove(2);
+        names.remove("xyz");
+
         Consumer<String> cls=new Consumer<String>()
         {
 
@@ -40,6 +45,7 @@ public class CollectionDeno
         set.add("xyz");
         set.add(null);
         set.add("xyz");
+        set.remove("xyz");
 
         set.forEach((s)->System.out.println(s));
         return set;
@@ -54,15 +60,45 @@ public Queue<String> queueDemo()
     queue.add("pqr");
     queue.add(null);
     queue.add("xyz");
+    queue.offer("android");
+    queue.peek();
+    queue.poll();
     queue.forEach(System.out::println);
     return queue;
+
+}
+public  void mapDemo()
+{
+    Map<Integer,String> map=new HashMap<Integer,String>();
+    map.put(1,"abc");
+    map.put(3,"lmn");
+    map.put(2,"pqr");
+    map.put(4,"xyz");
+    Set<Integer> keys=map.keySet();
+    keys.forEach(key ->System.out.println("key -"+key));
+    Collection<String> values=map.values();
+    values.forEach(val ->System.out.println("values-"+val));
+    map.remove(1,"abc");
+    System.out.println("2 available ->"+map.containsKey(2));
+    System.out.println("lmn available -> "+map.containsValue("lmn"));
+    System.out.println("Element At 3 -> "+ map.getOrDefault(3, "none"));
+    map.forEach( (k, v) -> System.out.println("Key - "+k +" Value - "+v) );
+
 
 }
 
     public static void main(String[] args) {
         CollectionDeno cdm=new CollectionDeno();
+        //cdm.listDemo();
+        //cdm.listDemo();
+        //cdm.queueDemo();
+        System.out.println("----- List Demo -----");
         cdm.listDemo();
-        cdm.listDemo();
+        System.out.println("----- Set Demo -----");
+        cdm.setDemo();
+        System.out.println("----- Queue Demo -----");
         cdm.queueDemo();
+        System.out.println("----- Map Demo -----");
+        cdm.mapDemo();
     }
 }

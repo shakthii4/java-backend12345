@@ -44,7 +44,7 @@ public class DbService
     public void findEmployee(String name) throws SQLException {
         String sql="select * from emp_info where emp_name=?";
         PreparedStatement ps=connection.prepareStatement(sql);
-        ps.setString(1,"name");
+        ps.setString(1,name);
         ResultSet rs = ps.executeQuery();
 
         while (rs.next())
@@ -58,4 +58,5 @@ public class DbService
         }
         rs.close();
     }
+
 }

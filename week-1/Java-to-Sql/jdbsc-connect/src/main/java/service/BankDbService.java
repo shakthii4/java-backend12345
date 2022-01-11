@@ -23,7 +23,8 @@ public class BankDbService
         return aff;
 
     }
-    public void showAllAccount() throws SQLException {
+    public void showAllAccount() throws SQLException
+    {
         String sql="select * from Bank_Account";
         PreparedStatement ps = connection.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
@@ -39,4 +40,33 @@ public class BankDbService
         }
         rs.close();
     }
+    public void displayBalance(String name) throws SQLException {
+        String sql="select * from Bank_Account where ac_hld_nm=?";
+        PreparedStatement ps = connection.prepareStatement(sql);
+        ps.setString(1,name);
+        ResultSet rs = ps.executeQuery();
+        while (rs.next())
+        {
+            int acnm = rs.getInt("ac_num");
+            String nm=rs.getString("ac_hld_nm");
+            int at=rs.getInt("amt");
+            Date dt=rs.getDate("ac_crt_date");
+            boolean st=rs.getBoolean("status");
+            System.out.println("Hi, :"+nm+" Your Account Number is :"+acnm+" and Your Account Balance is "+at+" and Account Opening Date is :"+dt+" and Current Status is "+st);
+            connection.commit();
+        }
+        rs.close();
+
+    }
+    public int moneyTransfer(int ac_Num1) throws SQLException {
+        String sql="update Bank_Account set amt=amt-100 where ac_num=?";
+        PreparedStatement ps = connection.prepareStatement(sql);
+        ps.setInt(1,ac_Num1);
+       // ps.setInt(2,ac_Num2);
+        int upid=ps.executeUpdate();
+        connection.commit();
+        System.out.println("Amount Transfer Successfully");
+        return upid;
+    }
+
 }
