@@ -1,11 +1,17 @@
 package com.sakthi.day1.practice.entity;
 
+
+
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 @Entity
+
+
 public class Department
 {
     @Id
@@ -15,14 +21,14 @@ public class Department
     private  String dAddress;
     private String dCode;
 
+    public Department() {
+    }
+
     public Department(Long dId, String dName, String dAddress, String dCode) {
         this.dId = dId;
         this.dName = dName;
         this.dAddress = dAddress;
         this.dCode = dCode;
-    }
-
-    public Department() {
     }
 
     public Long getdId() {
@@ -66,6 +72,4 @@ public class Department
                 ", dCode='" + dCode + '\'' +
                 '}';
     }
-
-
 }
