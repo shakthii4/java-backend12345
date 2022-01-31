@@ -13,7 +13,6 @@ public class Day3DemoApplication {
 		ConfigurableApplicationContext context = SpringApplication.run(Day3DemoApplication.class, args);
 		Home h=context.getBean(Home.class,args);
 		h.connect();
-
 		Home h2=context.getBean(Home.class,args);
 		h2.connect();
 	}
