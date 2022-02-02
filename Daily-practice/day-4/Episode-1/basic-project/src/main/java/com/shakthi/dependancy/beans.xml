@@ -1,0 +1,14 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
+<bean id="airtel" class="com.shakthi.dependancy.Airtel">
+        </bean>
+
+    Airtel airtel=new Airtel(); ->it will create the object for inside IOC container ,here we mention  id="airtel" this is creating particular object reference called as airtel.
+
+</beans>
