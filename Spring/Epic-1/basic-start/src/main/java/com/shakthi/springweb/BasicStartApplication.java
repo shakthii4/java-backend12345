@@ -9,7 +9,7 @@ public class BasicStartApplication {
 	public static void main(String[] args)
 	{
 		SpringApplication.run(BasicStartApplication.class, args);
-		EmailClient emailClient=new EmailClient(new BasicSpellChecker());   	//	SpellChecker spellChecker=new BasicSpellChecker();
+		EmailClient emailClient=new EmailClient(new AdvancedSpellChecker());   	//	SpellChecker spellChecker=new BasicSpellChecker();
 		emailClient.sendEmail("hi this is first msg");
 	}
 
