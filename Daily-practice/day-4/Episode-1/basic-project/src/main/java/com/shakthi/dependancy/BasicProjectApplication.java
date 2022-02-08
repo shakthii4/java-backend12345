@@ -34,15 +34,54 @@ public class BasicProjectApplication {
 		//2.Application Context - Interfaces
 		//we want to implement this ApplicationContext classPathXmlApplicationContext class in tis class implementing ApplicationContext
 
-		ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
+	/*	ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
 		System.out.println("xml config");
 		Airtel air= (Airtel) context.getBean("airtel");
 		air.calling();
 		air.data();
 
-		Airtel sim = context.getBean("airtel", Airtel.class);//alter for typecasting  
+		Airtel sim = context.getBean("airtel", Airtel.class);//alter for typecasting
+		sim.calling();
+		//go to beans.xml
 
+
+*/
+		//<--------------------- Dependency Injunction ------------------>
+		//injuncting the dependacies
+		//2 types of injunction ---> 1.using setter injection 2. using constructor Injection
+		//1. using Setter Injection
+
+		/*Student student=new Student();---> spring is going to create an container
+		student.setStudentName("SHiva");
+		student.displayStudentInfo();*/
+		/*
+		Spring IOC --->
+		1.Creating Object for us
+		2.Managing pur Objects
+		3.Helping our Application to be Configurable
+		4.Managing dependencies
+		*/
+		/*ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
+		Student abi=context.getBean("student",Student.class);
+		abi.displayStudentInfo(); */   //setter method
+
+//		constructor injection
+//		ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
+//		Student abi=context.getBean("student",Student.class);
+//		abi.displayStudentInfo();
+
+
+		//<----------------------------------------------------------------------------------------------------------
+	//	Student2 student2=new Student2();
+//		MathCheat cheat=new MathCheat();
+//		student2.setMathCheat(cheat);
+//		student2.cheatting();
+ApplicationContext context=new ClassPathXmlApplicationContext();
 
 	}
+
+
+
+
 
 }

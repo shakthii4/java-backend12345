@@ -5,6 +5,8 @@ import com.ani.springdata.jdbc.service.DbService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RequestMapping("/db")
 @RestController
 public class DbController
@@ -30,7 +32,8 @@ public class DbController
     }
 
     @GetMapping // GET - http://localhost:8080/db/
-    public @ResponseBody List<Emp> employees() {
+    public @ResponseBody
+    List<Emp> employees() {
         return service.findEmployees();
     }
 

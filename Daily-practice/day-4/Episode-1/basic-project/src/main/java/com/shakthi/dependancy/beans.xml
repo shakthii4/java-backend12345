@@ -9,6 +9,23 @@
 <bean id="airtel" class="com.shakthi.dependancy.Airtel">
         </bean>
 
-    Airtel airtel=new Airtel(); ->it will create the object for inside IOC container ,here we mention  id="airtel" this is creating particular object reference called as airtel.
+  //  Airtel airtel=new Airtel(); ->it will create the object for inside IOC container ,here we mention  id="airtel" this is creating particular object reference called as airtel.
+
+
+    <!-- <bean id="student" class="com.shakthi.dependancy.Student">
+        <property name="studentName" value="Abisa"/> property means spring internally calling setter method-> //when ever spring will create an object your going to inject the property "studentName" that is value(Abisa)
+
+        <property name="id" value="12"/> "12"  -> spring will internally converted into String to int type
+       // Student student=new Student();
+        //student.setStudentName("Abisa");
+
+     constructor inject
+    <constructor-arg name="studentName" value="Abisa"/>
+    <constructor-arg name="id" value="1"/>
+</bean>
+    -->
+
+
+
 
 </beans>

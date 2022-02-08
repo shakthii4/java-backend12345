@@ -4,29 +4,25 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Connectivity
-{
+public class Connectivity {
     private final Connection connection;
 
-    public Connectivity() throws ClassNotFoundException,SQLException {
+    public Connectivity() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
-        connection= DriverManager.getConnection(
+        connection = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/java_backend_training_db",
-            "root",
-            "password");
+                "root",
+                "password");
         connection.setAutoCommit(false);
         System.out.println("Connected to MySql Successfully");
 
     }
 
-    public Connection getConnection()
-    {
+    public Connection getConnection() {
         return connection;
 
     }
-
-
 
 
 }
