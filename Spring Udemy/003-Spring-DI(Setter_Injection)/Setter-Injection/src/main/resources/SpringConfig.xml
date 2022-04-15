@@ -8,6 +8,7 @@
 
 
     <!-- bean definitions here -->
+    <context:property-placeholder location="application.properties"/>
     <bean id="myFortuneService" class="com.shakthi.setterInjection.HappyFortuneService"></bean>
 
     <bean id="mycoach" class="com.shakthi.setterInjection.TrackCoach">
@@ -19,8 +20,12 @@
     <bean id="myCricketCoach" class="com.shakthi.setterInjection.CricketCoach">
         <property name="fortuneService" ref="myFortuneService"/>
 <!--  setter literal value injectio  -->
-        <property name="emailAddress" value="rjshakthi4498@gmail.com"/>
-        <property name="team" value="BangaloreRoyal"/>
+<!--        <property name="emailAddress" value="rjshakthi4498@gmail.com"/>-->
+<!--        <property name="team" value="BangaloreRoyal"/>-->
+
+        <property name="emailAddress" value="${foo.email}"/>
+              <property name="team" value="${foo.team}"/>
+
     </bean>
 
 </beans>
