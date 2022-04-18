@@ -5,7 +5,8 @@ public class TrackCoach implements Coach
 
     FortuneService fortuneService;
 
-    public TrackCoach() {
+    public TrackCoach()
+    {
     }
 
     public TrackCoach(FortuneService fortuneService)
@@ -15,7 +16,7 @@ public class TrackCoach implements Coach
     }
     @Override
     public String getDailyworkout()
-            {
+    {
         return "Run a hard 5k";
     }
 
@@ -23,5 +24,17 @@ public class TrackCoach implements Coach
     public String getDailyFortune()
     {
         return fortuneService.getFortune();
+    }
+
+    //Bean Life Cycle Example
+
+    public void doMyStartupStuff()
+    {
+        System.out.println("TrackCoach: inside method domyStartupStuff");
+    }
+
+    public void doMyCleanupStuff()
+    {
+        System.out.println("TrackCoach: inside method doMyCleanupStuff");
     }
 }
